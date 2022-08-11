@@ -4,9 +4,14 @@ using System.Drawing;
 Console.WriteLine("Hello, World!");
 
 Console.WriteLine(ZBar.ZBar.Version);
-
-
 var bitmap = (Bitmap)Image.FromFile("barcode.bmp");
+
+//var zbarImage = new ZBar.Image(bitmap);
+
+//foreach (var item in zbarImage.Symbols)
+//{
+//    Console.WriteLine(item.Data);
+//}
 var scanner = new ZBar.ImageScanner();
 
 var symbols = scanner.Scan(bitmap);
