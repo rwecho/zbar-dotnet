@@ -26,9 +26,11 @@ namespace ZBar
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                var x86OrX64 = IntPtr.Size == 4 ? "x86" : "x64";
-
-                var libPath = Path.Combine("lib", "3rdparty", "zbar", $"win-{x86OrX64}", "libzbar-0.dll");
+                if(IntPtr.Size == 4)
+                {
+                    throw new InvalidOperationException("Unsupport x86.");
+                }
+                var libPath = Path.Combine( "zbar", "libzbar-0.dll");
                 NativeLibrary.TryLoad(libPath, out libHandle);
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ||

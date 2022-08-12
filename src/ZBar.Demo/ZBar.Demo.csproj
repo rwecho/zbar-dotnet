@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ZBar\ZBar.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="barcode.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
