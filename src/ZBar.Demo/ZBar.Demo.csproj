@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ZBar" Version="1.0.0" />
+    <PackageReference Include="Accord.Imaging" Version="3.8.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +18,9 @@
 
   <ItemGroup>
     <None Update="barcode.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="no\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
